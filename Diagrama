@@ -1,124 +1,51 @@
-<mxfile host="app.diagrams.net" modified="2025-04-23T00:00:00.000Z" agent="5.0 (Windows)">
-  <diagram name="Requisición y Despacho">
-    <mxGraphModel>
-      <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
+Algoritmo Requisicion_Despacho
+	// ---------- Entradas ----------
+	Escribir "Ingrese la cantidad de copias solicitadas:"
+	Leer cantidadCopias
 
-        <!-- Figuras -->
-        <mxCell id="A" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
-        </mxCell>
+	Escribir "Ingrese la clave del producto:"
+	Leer claveProducto
 
-        <mxCell id="B" value="Capturar:&#xa;• cantidad copias&#xa;• clave producto&#xa;• datos material" style="shape=parallelogram;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="230" y="40" width="200" height="80" as="geometry"/>
-        </mxCell>
+	Escribir "Ingrese los datos del material recibido:"
+	Leer datosMaterial
 
-        <mxCell id="C" value="Registrar datos&#xa;en sistema" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="60" width="170" height="60" as="geometry"/>
-        </mxCell>
+	// ---------- Registro ----------
+	Escribir "Registrando datos en el sistema..."
+	// (Simulación de registro)
+	
+	// ---------- Verificación con la orden de compra ----------
+	Escribir "Verificar coincidencia con la orden de compra (S/N):"
+	Leer coincideOrden
 
-        <mxCell id="D" value="Verificar coincidencia&#xa;con orden de compra" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="730" y="60" width="210" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="E" value="¿Coinciden?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="60" width="120" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="F" value="Generar alerta:&#xa;“Datos no coinciden”" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1230" y="40" width="220" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="G" value="Comprobar stock&#xa;en inventario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1230" y="160" width="200" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="H" value="¿Stock suficiente?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="160" width="140" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="I" value="Generar alerta:&#xa;“Sin inventario”" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1750" y="120" width="220" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="J" value="Actualizar registro&#xa;y reservar artículos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1750" y="260" width="230" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="K" value="Imprimir hoja&#xa;de envío" style="shape=document;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2030" y="260" width="190" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="L" value="Despachar&#xa;productos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2270" y="260" width="170" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="M" value="Fin" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2510" y="260" width="120" height="40" as="geometry"/>
-        </mxCell>
-
-        <!-- Conectores -->
-        <!-- A→B→C→D→E -->
-        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="A" target="B">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="B" target="C">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="C" target="D">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="D" target="E">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Rama “No” -->
-        <mxCell id="e5" value="No" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="E" target="F">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="F" target="M">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Rama “Sí” -->
-        <mxCell id="e7" value="Sí" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="E" target="G">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="G" target="H">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Stock No -->
-        <mxCell id="e9" value="No" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="H" target="I">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="I" target="M">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Stock Sí -->
-        <mxCell id="e11" value="Sí" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="H" target="J">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="J" target="K">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="K" target="L">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="L" target="M">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+	Si coincideOrden <> "S" Entonces
+		Escribir "ALERTA: Datos no coinciden con la orden de compra."
+		Escribir "Proceso finalizado."
+	FinSi
+	
+	Si coincideOrden = "S" Entonces
+		// ---------- Verificación de inventario ----------
+		Escribir "Verificar si existe stock suficiente (S/N):"
+		Leer hayStock
+		
+		Si hayStock <> "S" Entonces
+			Escribir "ALERTA: Sin inventario disponible."
+			Escribir "Proceso finalizado."
+		FinSi
+		
+		Si hayStock = "S" Entonces
+			// ---------- Actualización y reserva ----------
+			Escribir "Actualizando registro y reservando artículos..."
+			// (Simulación)
+			
+			// ---------- Impresión de hoja de envío ----------
+			Escribir "Imprimiendo hoja de envío..."
+			// (Simulación)
+			
+			// ---------- Despacho ----------
+			Escribir "Despachando productos..."
+			// (Simulación)
+			
+			Escribir "Proceso completado satisfactoriamente."
+		FinSi
+	FinSi
+FinAlgoritmo
